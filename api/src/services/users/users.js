@@ -19,7 +19,7 @@ export const userByDiscordId = async ({ discordId }) => {
   //   where: { discordId },
   // })
   let user = await db.user.findOne({
-    where: { discordId },
+    where: { platformId: discordId },
   })
   if (user) console.log(`User "${discordId}" found.`)
   if (!user) {
